@@ -8,38 +8,38 @@ Usage
 
 Compile with 'make' and run 'rpn' to enter the REPL.  Supported operators:
 
-*   __.__
+*   __output__
 
-    10 .
+        10 .
 
     Prints 10, the value at the top of the stack.
 
-*   __+__
+*   __addition__
 
-    10 2 1 + .
+        10 2 1 + .
 
     Prints 13, the sum of 10, 2, and 1.
 
-*   __-__
+*   __subtraction__
 
-    100 50 - .
+        100 50 - .
 
     Prints 50.
 
-*   __/__
+*   __division__
 
-    12 4 / .
+        12 4 / .
 
     Prints 3.
 
-*   __*__
+*   __multiplication__
 
-    3 3 * .
+        3 3 * .
 
     Prints 9.
 
 Note that you can 'peek' the stack anywhere in an expression, ie:
 
-    10 2 + . 2 / .
+        10 2 + . 2 / .
 
     Prints "12" and then "6"
