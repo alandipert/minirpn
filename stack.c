@@ -47,7 +47,7 @@ int stack_empty(stack **s) {
 
 float stack_pop(stack **s) {
   if(stack_empty(s)) {
-    fprintf(stderr, "Error: stack underflow");
+    fprintf(stderr, "Error: stack underflow\n");
     return 0;
   } else {
     stack *popped_s = *s;
@@ -60,7 +60,7 @@ float stack_pop(stack **s) {
 
 float stack_peek(stack **s) {
   if(stack_empty(s)) {
-    fprintf(stderr, "Error: stack underflow");
+    fprintf(stderr, "Error: stack underflow\n");
     return 0;
   } else {
     return (*s)->value;

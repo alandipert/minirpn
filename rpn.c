@@ -23,6 +23,13 @@ int main(int argc, char *argv[]) {
                   break;
         case '.': f_print(&s);
                   break;
+        case 'q': free_stack(&s);
+                  printf("Exiting\n");
+                  return 0;
+        case 'c': free_stack(&s);
+                  s = NULL;
+                  printf("Stack cleared.\n");
+                  break;
         default : printf("Unknown operator \"%s\"\n", t.symbol);
       }
     }
