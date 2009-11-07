@@ -30,6 +30,9 @@ int main(int argc, char *argv[]) {
                   s = NULL;
                   printf("Stack cleared.\n");
                   break;
+        case 'h':
+        case '?': printf("q\tquit\nc\tclear stack\n.\tprint top of stack\n");
+                  break;
         default : printf("Unknown operator \"%s\"\n", t.symbol);
       }
     }

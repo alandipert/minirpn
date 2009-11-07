@@ -14,33 +14,39 @@ void f_subtract(stack **s) {
   float result;
   if(!stack_empty(s)) {
     result = stack_pop(s);
+    while(!stack_empty(s)) {
+      result = stack_pop(s) - result;
+    }
+    stack_push(s, result);
+  } else {
+    fprintf(stderr, "Error: stack underflow\n");
   }
-  while(!stack_empty(s)) {
-    result = stack_pop(s) - result;
-  }
-  stack_push(s, result);
 }
 
 void f_multiply(stack **s) {
   float result;
   if(!stack_empty(s)) {
     result = stack_pop(s);
+    while(!stack_empty(s)) {
+      result *= stack_pop(s);
+    }
+    stack_push(s, result);
+  } else {
+    fprintf(stderr, "Error: stack underflow\n");
   }
-  while(!stack_empty(s)) {
-    result *= stack_pop(s);
-  }
-  stack_push(s, result);
 }
 
 void f_divide(stack **s) {
   float result;
   if(!stack_empty(s)) {
     result = stack_pop(s);
+    while(!stack_empty(s)) {
+      result = stack_pop(s) / result;
+    }
+    stack_push(s, result);
+  } else {
+    fprintf(stderr, "Error: stack underflow\n");
   }
-  while(!stack_empty(s)) {
-    result = stack_pop(s) / result;
-  }
-  stack_push(s, result);
 }
 
 void f_print(stack **s) {
