@@ -42,7 +42,7 @@ void stack_push(stack **s, float value) {
 }
 
 int stack_empty(stack **s) {
-  return *s == NULL;
+  return (*s == NULL || *s < 0);
 }
 
 float stack_pop(stack **s) {
