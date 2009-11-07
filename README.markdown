@@ -40,6 +40,6 @@ Compile with 'make' and run 'rpn' to enter the REPL.  Supported operators:
 
 Note that you can 'peek' the stack anywhere in an expression, ie:
 
-        10 2 + . 2 / .
+    10 2 + . 2 / .
 
     Prints "12" and then "6"
