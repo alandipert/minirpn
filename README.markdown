@@ -6,7 +6,7 @@ This is a small calculator in C for RPN calculating at the command line.  Expres
 Usage
 =================
 
-Compile with 'make' and run 'rpn' to enter the REPL.  Supported operators:
+Compile with `make` and run `./rpn` to enter the REPL.  Supported operators:
 
 *   __output__
 
