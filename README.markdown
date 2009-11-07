@@ -36,7 +36,7 @@ Usage
 
     Prints 9.
 
-Note that you can 'peek' the stack anywhere in an expression, ie:
+Note that you can 'peek' the top of the stack anywhere in an expression, ie:
 
     10 2 + . 2 / .
 
