@@ -1,7 +1,7 @@
 CC=gcc
 CFLAGS=-g -Wall
 
-OBJECTS=rpn.o stack.o lex.o functions.o
+OBJECTS=rpn.o stack.o lex.o 
 
 all: $(OBJECTS)
 	$(CC) -o rpn $(OBJECTS)

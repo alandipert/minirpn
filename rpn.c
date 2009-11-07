@@ -2,7 +2,6 @@
 #include <stdlib.h>
 #include "lex.h"
 #include "stack.h"
-#include "functions.h"
 
 int main(int argc, char *argv[]) {
 
@@ -12,16 +11,21 @@ int main(int argc, char *argv[]) {
     if(t.type == T_VALUE) {
       stack_push(&s, t.value);
     } else {
+      float arg1,arg2;
       switch(t.symbol[0]) {
-        case '+': f_add(&s);
+        case '+': stack_push(&s, stack_pop(&s)+stack_pop(&s));
                   break;
-        case '-': f_subtract(&s);
+        case '-': arg1 = stack_pop(&s);
+                  arg2 = stack_pop(&s);
+                  stack_push(&s, arg2-arg1);
                   break;
-        case '*': f_multiply(&s);
+        case '*': stack_push(&s, stack_pop(&s)*stack_pop(&s));
                   break;
-        case '/': f_divide(&s);
+        case '/': arg1 = stack_pop(&s); 
+                  arg2 = stack_pop(&s);
+                  stack_push(&s, arg2/arg1);
                   break;
-        case '.': f_print(&s);
+        case '.': printf("%g\n", stack_peek(&s));
                   break;
         case 'q': free_stack(&s);
                   printf("Exiting\n");

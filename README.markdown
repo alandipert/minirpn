@@ -14,9 +14,9 @@ Usage
 
 *   __addition__
 
-        10 2 1 + .
+        10 2 + .
 
-    Prints 13, the sum of 10, 2, and 1.
+    Prints 12, the sum of 10 and 2.
 
 *   __subtraction__
 
@@ -38,6 +38,11 @@ Usage
 
 Note that you can 'peek' the top of the stack anywhere in an expression, ie:
 
-    10 2 + . 2 / .
+    1 2 + . 4 * . 5 + . 3 - .
 
-    Prints "12" and then "6"
+Prints:
+
+    3
+    12
+    17
+    14
