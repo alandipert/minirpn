@@ -1,12 +1,10 @@
-minirpn - 4 function RPN calculator REPL
+rpn - 4 function CLI RPN calculator
 ========================================
 
-This is a small calculator in C for RPN calculating at the command line.  Expressions are read from STDIN.
+This is a small calculator in C for RPN calculating at the command line.  Expressions are read from STDIN.  Compile with `make` and run `./rpn` to enter the REPL.
 
 Usage
 =================
-
-Compile with `make` and run `./rpn` to enter the REPL.  Supported operators:
 
 *   __output__
 
