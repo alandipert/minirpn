@@ -11,9 +11,6 @@ int next(token *t, FILE *f) {
   int reading_value = 0;
   while((c = fgetc(f)) != EOF) {
     if(isspace(c)) {
-      if(c == '\n') {
-        printf("> ");
-      }
       if(num_read > 0) {
         t_buf[num_read] = '\0';
         t->type = (reading_value ? T_VALUE : T_SYMBOL);

@@ -9,8 +9,6 @@ void print_usage() {
 
 int main(int argc, char *argv[]) {
 
-  printf("> ");
-
   stack *s = NULL;
   token t;
   while(next(&t, stdin)) {
@@ -31,19 +29,19 @@ int main(int argc, char *argv[]) {
                   arg2 = stack_pop(&s);
                   stack_push(&s, arg2/arg1);
                   break;
-        case '.': printf("%g\n> ", stack_peek(&s));
+        case '.': printf("%g\n", stack_peek(&s));
                   break;
         case 'q': free_stack(&s);
                   printf("Exiting\n");
                   return 0;
         case 'c': free_stack(&s);
                   s = NULL;
-                  printf("Stack cleared.\n> ");
+                  printf("Stack cleared.\n");
                   break;
         case 'h':
         case '?': print_usage();
                   break;
-        default : printf("Unknown operator \"%s\"\n> ", t.symbol);
+        default : printf("Unknown operator \"%s\"\n", t.symbol);
       }
     }
   }
