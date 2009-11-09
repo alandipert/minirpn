@@ -9,8 +9,6 @@ void print_usage() {
 
 int main(int argc, char *argv[]) {
 
-  printf("RPN Calculator\n");
-  print_usage();
   printf("> ");
 
   stack *s = NULL;
