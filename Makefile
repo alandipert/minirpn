@@ -14,7 +14,10 @@ iphone: CC=$(IPHONE_CC)
 iphone: CFLAGS=$(IPHONE_CFLAGS)
 iphone: compile
 
-all:
+test: compile
+	sh tests.sh
+
+all: 
 	compile
 
 # scp binary to iphone, fake-sign it with ssh
