@@ -35,7 +35,6 @@ int main(int argc, char *argv[]) {
                   printf("Exiting\n");
                   return 0;
         case 'c': free_stack(&s);
-                  s = NULL;
                   printf("Stack cleared.\n");
                   break;
         case 'h':

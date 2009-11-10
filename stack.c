@@ -22,6 +22,7 @@ void free_stack(stack **s) {
       free_stack(&next);
     }
   }
+  *s = NULL;
 }
 
 static stack* stack_mk(float value) {
