@@ -15,6 +15,4 @@ try "10.2 2 *" "20.4" "Multiplication"
 try "33 3 /" "11" "Division"
 try "10 10 + 4 / 20 * 50 -" "50" "Expression"
 
-echo "\e[32;40mAll tests passed.\033[0m"
-
 exit 0
