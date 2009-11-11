@@ -6,7 +6,7 @@ OBJECTS=rpn.o stack.o lex.o
 
 compile: $(OBJECTS)
 	$(CC) $(CFLAGS) $(LIB) -o rpn $(OBJECTS)
-	sh tests.sh
+	./tests.sh
 
 all: compile
 
