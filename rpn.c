@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <math.h>
 #include "lex.h"
 #include "stack.h"
 
@@ -28,6 +29,10 @@ int main(int argc, char *argv[]) {
         case '/': arg1 = stack_pop(&s); 
                   arg2 = stack_pop(&s);
                   stack_push(&s, arg2/arg1);
+                  break;
+        case '^': arg1 = stack_pop(&s);
+                  arg2 = stack_pop(&s);
+                  stack_push(&s, pow(arg2, arg1));
                   break;
         case '.': printf("%g\n", stack_peek(&s));
                   break;
