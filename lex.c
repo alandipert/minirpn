@@ -5,15 +5,15 @@
 #include "lex.h"
 
 int next(token *t, FILE *f) {
-  char t_buf[255];
-  int num_read = 0;
-  char c;
-  int reading_value = 0;
+  char c, t_buf[255];
+  int num_read, in_value;
+  num_read = in_value = 0;
+
   while((c = fgetc(f)) != EOF) {
     if(isspace(c)) {
       if(num_read > 0) {
         t_buf[num_read] = '\0';
-        t->type = (reading_value ? T_VALUE : T_SYMBOL);
+        t->type = (in_value ? T_VALUE : T_SYMBOL);
         if(t->type == T_VALUE) {
           t->value = atof(t_buf);
         } else {
@@ -25,7 +25,7 @@ int next(token *t, FILE *f) {
         return 0;
       }
     } else {
-      reading_value = isdigit(c);
+      in_value = isdigit(c);
       t_buf[num_read++] = c;
     }
   }
