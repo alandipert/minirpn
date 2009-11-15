@@ -11,12 +11,16 @@ void print_usage() {
 int main(int argc, char *argv[]) {
 
   stack *s = NULL;
+  float arg1, arg2;
   token t;
+
   while(next(&t, stdin)) {
     if(t.type == T_VALUE) {
+      //If this token is a value, push it on the stack.
       stack_push(&s, t.value);
     } else {
-      float arg1,arg2;
+      //Otherwise, we're dealing with an operator:
+      //Pop elements from the stack as necessary, and push result.
       switch(t.symbol[0]) {
         case '+': stack_push(&s, stack_pop(&s)+stack_pop(&s));
                   break;
