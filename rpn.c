@@ -28,16 +28,6 @@ int main(int argc, char *argv[]) {
                   arg2 = stack_pop(&s);
                   stack_push(&s, arg2-arg1);
                   break;
-        case '*': stack_push(&s, stack_pop(&s)*stack_pop(&s));
-                  break;
-        case '/': arg1 = stack_pop(&s); 
-                  arg2 = stack_pop(&s);
-                  stack_push(&s, arg2/arg1);
-                  break;
-        case '^': arg1 = stack_pop(&s);
-                  arg2 = stack_pop(&s);
-                  stack_push(&s, pow(arg2, arg1));
-                  break;
         case '.': printf("%g\n", stack_peek(&s));
                   break;
         case 'q': free_stack(&s);
